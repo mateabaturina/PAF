@@ -7,7 +7,7 @@ def crtez(p, q, r, x, y):
         plt.figure(figsize=(12,12))
         plt.gca().add_patch(circle)
         plt.plot()
-        plt.plot(x,y)
+        plt.scatter(x, y, s=1000)
         plt.show()
     else:
         b = input("Unesite naziv: ")
