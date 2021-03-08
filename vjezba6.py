@@ -4,6 +4,7 @@ def crtez(p, q, r, x, y):
     c = int(input("Unesite 0 za crtez ili 1 za spremiti:"))
     if c == 0:
         circle=plt.Circle((p, q),r, fill = False )
+        plt.figure(figsize=(12,12))
         plt.gca().add_patch(circle)
         plt.plot()
         plt.plot(x,y)
@@ -19,7 +20,6 @@ def kruznica():
     x=int(input("Unesite x: "))
     y=int(input("Unesite y: "))
     crtez(p, q, r, x, y)
-    tocka(x, y)
     d = r^2 - ((x-p)^2 + (y-q)^2)
     
     if d >= 0:
