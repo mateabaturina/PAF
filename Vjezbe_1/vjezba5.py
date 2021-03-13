@@ -17,6 +17,8 @@ while True:
     c = int(input("Odaberite 0 ako zelite nacrtati graf ili 1 ako zelite spremiti graf: "))
     if c == 0:
         plt.plot(xpoints, ypoints)
+        plt.scatter(x1, y1, s=100)
+        plt.scatter(x2, y2, s=100)
         plt.show()
         break
     else:
