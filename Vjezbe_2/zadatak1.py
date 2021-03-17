@@ -11,9 +11,9 @@ for a in range(1, 11):
 
 for t in range(1, 11):
     v = a * t
-    v1 = v + a * 1
+    v1 = v + a * 0.01
     x = v * t
-    x1 = x + v1 * 1
+    x1 = x + v1 * 0.01
     brzina.append(int(v1))
     put.append(int(x1))
 
