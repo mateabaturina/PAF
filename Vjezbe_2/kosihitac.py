@@ -60,14 +60,19 @@ def domet(kut, v0):
     
     print('Domet iznosi: {}m.'.format(x))
 
-def maksimalna_brzina(v):
-    v_max = v
-    print('Maksimalna brzina iznosi {}m/s.'.format(v_max))
+def maksimalna_brzina(kut, v0):
+    kut = math.radians(kut)
+    kx = math.cos(kut)
+    ky = math.sin(kut)
+    v_list = []
+    for i in range(1000):
+        vx = v0 * kx
+        vy = v0 * ky
+        V = math.sqrt(vx**2 + vy**2) 
+        v_list.append(V)
+    print('Maksimalna brzina iznosi {}m/s.'.format(max(v_list)))
 
-def meta(kut, v0, t):
-    p = int(input('Unesite p: '))
-    q = int(input('Unesite q: '))
-    r = int(input('Unesite radijus: '))
+def meta(kut, v0, t, p, q, r):
     kut = math.radians(kut)
     kx = math.cos(kut)
     ky = math.sin(kut)
