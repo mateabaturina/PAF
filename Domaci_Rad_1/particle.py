@@ -123,7 +123,7 @@ class Particle:
             if D <= self.r:
                 break
         
-        print("Potrebna pocetna brzina za pogoditi metu iznosi {} m/s.".format(self.vx / self.kx))
+        print("Potrebna pocetna brzina za pogoditi metu iznosi {} m/s.".format(self.v0))
     
     def angle_to_hit_target(self, v0, p, q, r):
         self.p = p
