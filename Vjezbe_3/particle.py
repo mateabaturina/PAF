@@ -85,5 +85,8 @@ class Particle:
 
     def plot_trajectory1(self):
         plt.plot(self.T, self.re, 'b')
+        plt.xlabel("dt [s]")
+        plt.ylabel("absolute relative error [%]")
+        plt.title("Relativna pogreska")
         plt.pause(3)
         plt.close
