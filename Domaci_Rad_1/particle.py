@@ -92,7 +92,6 @@ class Particle:
     def total_time(self):
         self.Relative_error()
         self.a = sum(self.T)
-        #print("Ukupno vrijeme gibanja je {} s.".format(self.a))
         return self.a
 
     def max_speed(self):
