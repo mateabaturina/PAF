@@ -2,7 +2,7 @@ import particle as prt
 
 p1 = prt.Particle(0, 0, 0, 0, 0)
 p1.__init__(10, 60, 0, 0, 0.01)
-p1.total_time()
+print("Ukupno vrijeme gibanja je {} s.".format(p1.total_time()))
 p1.max_speed()
 p1.reset()
 

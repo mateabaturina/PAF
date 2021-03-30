@@ -38,11 +38,12 @@ class Particle:
     
     def Range(self): 
         x = self.x
-        v0 = self.v0
-        kut = self.Kut
+        #v0 = self.v0
+        #kut = self.Kut
         self.__move()
-        self.d = self.x - x
-        print("Za v={} i kut {} domet je {:.2f} m.".format(v0, kut, (self.d)))
+        d = self.x - x
+        return d
+        #print("Za v={} i kut {} domet je {:.2f} m.".format(v0, kut, (self.d)))
 
     def Range_Analitic(self):
         a = 9.81
@@ -91,7 +92,8 @@ class Particle:
     def total_time(self):
         self.Relative_error()
         self.a = sum(self.T)
-        print("Ukupno vrijeme gibanja je {} s.".format(self.a))
+        #print("Ukupno vrijeme gibanja je {} s.".format(self.a))
+        return self.a
 
     def max_speed(self):
         v_list = []
