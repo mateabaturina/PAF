@@ -2,14 +2,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def derivacija(func, x, h):
+def three_step(func, x, h):
     return ((func(x+h) - func(x-h))/(2*h))
 
-def der_analiticki(func, a, b, h):
+def two_step(func, x, h):
+    return ((func(x+h)-func(x))/h)
+
+def derivacija(func, a, b, h, method):
     list1 = []
     list2 = []
     for x in np.arange(a, b, h):
-        y = derivacija(func, x, h)
+        if method == 3:
+            der = three_step(func, x, h)
+        else:
+            der = two_step(func, x, h)
+        y = der
         list1.append(y)
         list2.append(x)
     return (list1, list2)
@@ -23,13 +30,36 @@ def analitic(func, a, b, h):
         list6.append(x)
     return (list5, list6)
 
-def gornja_granica(func):
+def integracija(func, a, b):
     g_meda = 0
+    d_meda = 0
+    list1 = []
+    list2 = []
+    list3 = []
+    list4 = []
+    n = 100
+    h = (b-a)/n
+    y = a
+    x = a + h
+    for i in range(n):
+        x += h
+        g_meda += func(x)*h
+        y += h
+        d_meda += func(y)*h
+        list1.append(g_meda)
+        list2.append(d_meda)
+        list3.append(i)
+    return (list1, list2, list3)
+
+def trapez(func, a, b):
     list1 = []
     list2 = []
     n = 100
-    h = 1/n
-    for x in range(n):
-        g_meda += func(x)*h
-        list1.append(g_meda)
-        list2.append(x)
+    h = (b-a)/n
+    y = a
+    x = a + h
+    for i in range(n):
+        trap = ((func(y) + func(x))/2)*h
+        list1.append(trap)
+        list2.append(i)
+    return (list1, list2)
