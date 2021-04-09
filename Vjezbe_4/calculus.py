@@ -42,10 +42,10 @@ def integracija(func, a, b):
     y = a
     x = a + h
     for i in range(n):
-        x += h
         g_meda += func(x)*h
-        y += h
         d_meda += func(y)*h
+        x += h
+        y += h
         list1.append(g_meda)
         list2.append(d_meda)
         list3.append(i)
@@ -60,7 +60,7 @@ def trapez(func, a, b):
     x = a + h
     trap = 0
     for i in range(n):
-        trap += ((func(y) + func(x))/2)*h
+        trap = ((func(y) + func(x))/2)*h
         list1.append(trap)
         list2.append(i)
     return (list1, list2)
