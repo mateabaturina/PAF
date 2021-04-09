@@ -58,8 +58,9 @@ def trapez(func, a, b):
     h = (b-a)/n
     y = a
     x = a + h
+    trap = 0
     for i in range(n):
-        trap = ((func(y) + func(x))/2)*h
+        trap += ((func(y) + func(x))/2)*h
         list1.append(trap)
         list2.append(i)
     return (list1, list2)
