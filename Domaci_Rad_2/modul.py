@@ -9,7 +9,7 @@ class Gibanje:
         self.x0 = x0
         self.v0 = v0
         self.t = 0
-        self.fi = self.func(self.v0, self.x0, self.t)
+        self.f = self.func(self.v0, self.x0, self.t)
         self.dt = dt
 
     def move(self, totalt):
@@ -20,8 +20,8 @@ class Gibanje:
         t = 0
         
         for i in range (int(totalt/self.dt)):
-            self.fi = self.func(self.v0, self.x0, self.t)
-            a = self.fi/ self.m
+            self.f = self.func(self.v0, self.x0, self.t)
+            a = self.f/ self.m
             self.v0 = self.v0 + a*self.dt
             self.x0 = self.x0 + self.v0*self.dt
             t += self.dt
