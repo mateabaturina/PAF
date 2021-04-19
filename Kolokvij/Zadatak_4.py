@@ -5,8 +5,6 @@ class Vertikalni_hitac:
         self.h0 = h0
         self.v0 = v0
         self.dt = dt
-        #self.h1 = h0
-        #self.v1 = v0
 
     def stvaranje_objekta(self):
         print("Objekt je uspjesno stvoren. Pocetna visina mu je {}, a pocetna brzina {}.".format(self.h0, self.v0))
