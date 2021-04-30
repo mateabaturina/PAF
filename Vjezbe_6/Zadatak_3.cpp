@@ -26,16 +26,15 @@ int main() {
     cout << "\nOriginalna lista je : ";
     Polje_cijelih_brojeva(lista);
 
+    cout << "\nLista nakon okretanja redoslijeda clanova polja je : ";
+    lista.reverse();
+    Polje_cijelih_brojeva(lista);
+
     cout << "\nLista nakon zamjene clanova polja je : ";
-    //swap(a, b);
     using std::swap;
     for (auto it = std::begin(lista); it != std::end(lista); it = std::adjacent_find(it, std::end(lista), std::less<int>{})) {
     swap(*it, *std::next(it));
     }
-    Polje_cijelih_brojeva(lista);
-
-    cout << "\nLista nakon okretanja redoslijeda clanova polja je : ";
-    lista.reverse();
     Polje_cijelih_brojeva(lista);
 
     cout << "\nLista nakon sortiranja clanova polja je : ";
