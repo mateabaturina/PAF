@@ -1,7 +1,13 @@
 #include <iostream>
 #include <cmath>
 #include <list>
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <iterator>
+#include <algorithm>
 
+ 
 using namespace std;
 
 class Harmonic_Oscillate {
@@ -14,7 +20,7 @@ class Harmonic_Oscillate {
     double t;
     double ti;
     double a; 
- 
+
     public:
     Harmonic_Oscillate(double _dt, double _k, double _m, double _v0, double _x0, double _ti){
         dt = _dt; 
@@ -31,16 +37,19 @@ class Harmonic_Oscillate {
         std::list<int> xlist;
         t = 0;
         int i = 0;
-        for (i = 1; i < 1000; i++){
-            a = (-k/m)*x0;
-            v0 = v0 + a*dt;
-            x0 = x0 + v0*dt;
-            t += dt;
-            alist.push_back(a);
-            vlist.push_back(v0);
-            xlist.push_back(x0);
-            tlist.push_back(t);
-        } 
+        ofstream fw("HO.txt", std::ofstream::out | ios::app);
+        if (fw.is_open());
+            for (i = 1; i < 1000; i++){
+                a = (-k/m)*x0;
+                v0 = v0 + a*dt;
+                x0 = x0 + v0*dt;
+                t += dt;
+                fw << a << "\t";
+                fw << v0 << "\t";
+                fw << x0 << "\t";
+                fw << t << "\t" << endl;
+            }
+        fw.close();
         return 0;
     }
 };
