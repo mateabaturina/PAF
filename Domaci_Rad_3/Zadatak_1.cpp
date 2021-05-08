@@ -37,14 +37,14 @@ class Harmonic_Oscillate {
         std::list<int> xlist;
         t = 0;
         int i = 0;
-        ofstream fw("aO.txt", std::ofstream::out | ios::app);
+        ofstream fw("HO.txt", std::ofstream::out | ios::app);
         if (fw.is_open());
             for (i = 1; i < 8000; i++){
                 a = (-k/m)*x0;
                 v0 = v0 + a*dt;
                 x0 = x0 + v0*dt;
                 t += dt;
-                fw << t << "\t";
+                fw << t << "\t"; 
                 fw << v0 << "\t";
                 fw << x0 << "\t";
                 fw << a << "\t" << endl;
